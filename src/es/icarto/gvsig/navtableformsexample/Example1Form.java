@@ -72,8 +72,8 @@ public class Example1Form extends AbstractForm {
 
 	HashMap<String, JComponent> widgets = getWidgetComponents();
 
-	cmp = (JTextField) widgets.get("RESULTADO");
-	chb = (JCheckBox) widgets.get("HAY_ANALI");
+	cmp = (JTextField) widgets.get("resultado");
+	chb = (JCheckBox) widgets.get("hay_anali");
 
 	componentEnablerListener = new ComponentEnablerListener();
 	chb.addActionListener(componentEnablerListener);
@@ -87,7 +87,6 @@ public class Example1Form extends AbstractForm {
 
     public class ComponentEnablerListener implements ActionListener {
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 	    enableComponentIfCheckBoxIsSelected("hay_anali", "resultado");
 	}

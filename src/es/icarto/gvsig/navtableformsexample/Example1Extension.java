@@ -1,7 +1,5 @@
 package es.icarto.gvsig.navtableformsexample;
 
-import org.apache.log4j.Logger;
-
 import com.iver.andami.PluginServices;
 import com.iver.andami.plugins.Extension;
 import com.iver.andami.ui.mdiManager.IWindow;
@@ -9,12 +7,11 @@ import com.iver.cit.gvsig.fmap.layers.FLyrVect;
 import com.iver.cit.gvsig.project.documents.view.gui.BaseView;
 
 import es.icarto.gvsig.navtableforms.ormlite.ORMLite;
-import es.icarto.gvsig.navtableforms.utils.Utils;
+import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 
 public class Example1Extension extends Extension {
 
-    FLyrVect layer;
-    private static Logger logger = Logger.getLogger("NTForms Example 1");
+    private FLyrVect layer;
 
     public void execute(String actionCommand) {
 	layer = getLayerFromTOC();
@@ -30,7 +27,8 @@ public class Example1Extension extends Extension {
 	    String layerName = ORMLite
 		    .getDataBaseObject(Preferences.XMLDATAFILE_PATH)
 		    .getTable("Example 1").getTableName();
-	    return Utils.getFlyrVect((BaseView) window, layerName);
+	    TOCLayerManager toc = new TOCLayerManager();
+	    return toc.getLayerByName(layerName);
 	}
 	return null;
     }
