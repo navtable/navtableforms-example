@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METADATA>
   <LAYER alias="Example 1">
-    <TABLENAME>example1.shp</TABLENAME>
+    <TABLENAME>example1</TABLENAME>
     <RECORDSET>
       <FIELD>
         <FIELDNAME>codigo</FIELDNAME>
