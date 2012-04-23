@@ -2,9 +2,7 @@ package es.icarto.gvsig.navtableformsexample;
 
 import com.iver.andami.PluginServices;
 import com.iver.andami.plugins.Extension;
-import com.iver.andami.ui.mdiManager.IWindow;
 import com.iver.cit.gvsig.fmap.layers.FLyrVect;
-import com.iver.cit.gvsig.project.documents.view.gui.BaseView;
 
 import es.icarto.gvsig.navtableforms.ormlite.ORMLite;
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
@@ -22,22 +20,18 @@ public class Example1Extension extends Extension {
     }
 
     private FLyrVect getLayerFromTOC() {
-	IWindow window = PluginServices.getMDIManager().getActiveWindow();
-	if (window instanceof BaseView) {
-	    String layerName = ORMLite
-		    .getDataBaseObject(Preferences.XMLDATAFILE_PATH)
-		    .getTable("Example 1").getTableName();
-	    TOCLayerManager toc = new TOCLayerManager();
-	    return toc.getLayerByName(layerName);
-	}
-	return null;
+	String layerName = ORMLite
+		.getDataBaseObject(Preferences.XMLDATAFILE_PATH)
+		.getTable("Example 1").getTableName();
+	TOCLayerManager toc = new TOCLayerManager();
+	return toc.getLayerByName(layerName);
     }
 
     protected void registerIcons() {
 	PluginServices.getIconTheme().registerDefault(
 		"example1-ntforms",
 		this.getClass().getClassLoader()
-			.getResource("images/example1.png"));
+		.getResource("images/example1.png"));
     }
 
     public void initialize() {
