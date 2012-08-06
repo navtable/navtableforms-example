@@ -37,7 +37,7 @@ public class Example1Form extends AbstractForm {
     @Override
     public FormPanel getFormBody() {
 	if (form == null) {
-	    return new FormPanel("exampleform1.xml");
+	    form = new FormPanel("exampleform1.xml");
 	}
 	return form;
     }
