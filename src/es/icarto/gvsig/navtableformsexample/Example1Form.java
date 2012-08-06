@@ -15,6 +15,7 @@ import com.jeta.forms.components.panel.FormPanel;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
 
+@SuppressWarnings("serial")
 public class Example1Form extends AbstractForm {
 
     private FormPanel form;
