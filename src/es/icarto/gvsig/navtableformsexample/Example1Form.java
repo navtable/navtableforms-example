@@ -18,6 +18,7 @@ import es.icarto.gvsig.navtableforms.AbstractForm;
 @SuppressWarnings("serial")
 public class Example1Form extends AbstractForm {
 
+    public static final String ABEILLE_FILENAME = "exampleform1.xml";
     private FormPanel form;
     private JCheckBox chb;
     private JTextField cmp;
@@ -37,7 +38,7 @@ public class Example1Form extends AbstractForm {
     @Override
     public FormPanel getFormBody() {
 	if (form == null) {
-	    form = new FormPanel("exampleform1.xml");
+	    form = new FormPanel(Example1Form.ABEILLE_FILENAME);
 	}
 	return form;
     }
@@ -49,7 +50,7 @@ public class Example1Form extends AbstractForm {
 
     @Override
     public Logger getLoggerName() {
-	return Logger.getLogger("Example1Form");
+	return Logger.getLogger(this.getClass().getName());
     }
 
     @Override
