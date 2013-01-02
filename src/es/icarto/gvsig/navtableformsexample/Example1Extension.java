@@ -4,7 +4,6 @@ import com.iver.andami.PluginServices;
 import com.iver.andami.plugins.Extension;
 import com.iver.cit.gvsig.fmap.layers.FLyrVect;
 
-import es.icarto.gvsig.navtableforms.ormlite.ORMLite;
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 
 public class Example1Extension extends Extension {
@@ -20,9 +19,7 @@ public class Example1Extension extends Extension {
     }
 
     private FLyrVect getLayerFromTOC() {
-	String layerName = ORMLite
-		.getDataBaseObject(Preferences.XMLDATAFILE_PATH)
-		.getTable("Example 1").getTableName();
+	String layerName = Preferences.LAYERNAME;
 	TOCLayerManager toc = new TOCLayerManager();
 	return toc.getLayerByName(layerName);
     }

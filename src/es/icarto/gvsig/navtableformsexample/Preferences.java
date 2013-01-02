@@ -11,4 +11,5 @@ public class Preferences {
     public static final String XMLDATAFILE_PATH = EXTENSION_PATH
 	    + "example1.xml";
 
+    public static final String LAYERNAME = "example1";
 }
