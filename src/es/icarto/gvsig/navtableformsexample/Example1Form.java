@@ -22,7 +22,6 @@ public class Example1Form extends AbstractForm {
     private FormPanel form;
     private JCheckBox chb;
     private JTextField cmp;
-    private ComponentEnablerListener componentEnablerListener;
 
     public Example1Form(FLyrVect layer) {
 	super(layer);
@@ -54,45 +53,19 @@ public class Example1Form extends AbstractForm {
     }
 
     @Override
-    protected void fillSpecificValues() {
-	enableComponentIfCheckBoxIsSelected("hay_anali", "resultado");
-    }
-
-    private void enableComponentIfCheckBoxIsSelected(String chbName,
-	    String cmpName) {
-
-	if (chb.isSelected()) {
-	    cmp.setEnabled(true);
-	} else {
-	    cmp.setEnabled(false);
-	}
-    }
-
-    @Override
     protected void setListeners() {
 	super.setListeners();
 
 	HashMap<String, JComponent> widgets = getWidgetComponents();
-
-	cmp = (JTextField) widgets.get("resultado");
-	chb = (JCheckBox) widgets.get("hay_anali");
-
-	componentEnablerListener = new ComponentEnablerListener();
-	chb.addActionListener(componentEnablerListener);
     }
 
     @Override
     protected void removeListeners() {
-	chb.removeActionListener(componentEnablerListener);
 	super.removeListeners();
     }
 
-    public class ComponentEnablerListener implements ActionListener {
-
-	public void actionPerformed(ActionEvent e) {
-	    enableComponentIfCheckBoxIsSelected("hay_anali", "resultado");
-	}
-
+    @Override
+    protected void fillSpecificValues() {
     }
 
 }
