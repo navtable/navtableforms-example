@@ -29,8 +29,6 @@ public class Example1Form extends AbstractForm {
     }
 
     private void initWindow() {
-	viewInfo.setHeight(350);
-	viewInfo.setWidth(450);
 	viewInfo.setTitle("Example 1");
     }
 
