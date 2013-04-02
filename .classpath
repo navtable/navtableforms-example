@@ -9,6 +9,6 @@
 	<classpathentry kind="lib" path="lib/formsrt.jar"/>
 	<classpathentry kind="lib" path="lib/es.icarto.gvsig.navtableforms.jar"/>
 	<classpathentry kind="lib" path="/_fwAndami/lib/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="lib/xstream-1.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/xstream-1.4.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
