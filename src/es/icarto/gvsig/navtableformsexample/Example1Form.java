@@ -29,7 +29,7 @@ public class Example1Form extends AbstractForm {
     }
 
     private void initWindow() {
-	viewInfo.setTitle("Example 1");
+	windowInfo.setTitle("Example 1");
     }
 
     @Override
